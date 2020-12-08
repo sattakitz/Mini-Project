@@ -8,8 +8,9 @@ export class ProductService {
   private baseApi = 'https://5fca6cf13c1c220016442675.mockapi.io/api/v1/';
   constructor(
     private http: HttpClient,
-  ) { }
+  ) { 
 
+  }
   getProducts() {
     return this.http.get<any>(`${this.baseApi}products`);
   }

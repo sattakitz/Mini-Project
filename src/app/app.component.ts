@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from './services/product.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class AppComponent {
 
   products = [];
   constructor(
-    private svProduct: ProductService,
+    public svProduct: ProductService,
+    private router: Router,
   ) {
     this.getProducts();
   }
@@ -22,6 +24,4 @@ export class AppComponent {
       console.log("🚀 ~ this.svProduct.getProducts ~ res", res);
     });
   }
-
-
 }
