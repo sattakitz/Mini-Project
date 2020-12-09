@@ -8,6 +8,7 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./list-products.component.css']
 })
 export class ListProductsComponent implements OnInit {
+
   products = [];
 
   constructor(
@@ -16,14 +17,21 @@ export class ListProductsComponent implements OnInit {
   ) {
     this.getProducts();
    }
-   getProducts() {
+  getProducts() {
     this.svProduct.getProducts().subscribe(res => {
       this.products = res;
       console.log("🚀 ~ this.svProduct.getProducts ~ res", res);
     });
   }
-
+  deleteProduct(id){
+    this.svProduct.deleteProduct(id).subscribe(data=>{
+      this.getProducts();
+      console.log("🚀 ~ this.svProduct.getProducts ~ res");      
+    });
+  }
+  
   ngOnInit(): void {
+
   }
 
 }

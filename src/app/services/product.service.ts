@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,7 +9,11 @@ export class ProductService {
   constructor(
     private http: HttpClient,
   ) { 
-
+  }
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
   }
   getProducts() {
     return this.http.get<any>(`${this.baseApi}products`);
@@ -20,7 +24,7 @@ export class ProductService {
   postProduct(model) {
     return this.http.post(`${this.baseApi}products`, model);
   }
-  putProduct(id, model) {
+  putProduct(id,model) {
     return this.http.put(`${this.baseApi}products/${id}`, model);
   }
   deleteProduct(id) {

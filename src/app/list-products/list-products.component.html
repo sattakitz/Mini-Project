@@ -3,7 +3,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">		
 			<div class="" role="status">			
 				<a [routerLink]="['./add-products']">
-					<button routerLinkActive="router-link-active" class="btn btn-primary" style="width:100px"> Add Products
+					<button routerLinkActive="router-link-active" class="btn btn-primary" style="width:100px height100px"> Add Products
 					</button>
 				</a>	
 			</div>
@@ -16,6 +16,7 @@
 			<th scope="col">createdAt</th>
 			<th scope="col">price</th>
 			<th scope="col">product</th>
+			<th scope="col">Manage</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -24,14 +25,18 @@
 			<td>{{ product.createdAt }}</td>
 			<td>{{ product.price }}</td>
 			<td>{{ product.product }}</td>
-			<a [routerLink]="['./edit-products']">
-				<button routerLinkActive="router-link-active" class="btn btn-info btn-sm" 
-				style="width:100px">Edit Products</button>
-			</a>
-			<a >
-				<button class="btn btn-danger btn-sm" style="width:100px">Delete Products</button>
-			</a>
-		</tr>
-
+			<td>
+				<a [routerLink]="['./edit-products']">
+					<button routerLinkActive="router-link-active" class="btn btn-info btn-sm" 
+					style="width:100px">Edit Products</button>
+				</a>
+			
+				<a>
+					<button (click)="deleteProduct(product.id)" 
+					class="btn btn-danger btn-sm" style="width:100px height 100px"
+					>Delete Products</button>
+				</a>
+			</td>
+			</tr>
 	</tbody>
 </table>

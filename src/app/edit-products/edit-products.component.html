@@ -1,6 +1,6 @@
-<div class="col-md-6 user-container">
-    <h2 class="text-center">Edit User</h2>
-    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">      
+<div class="container-sm">
+    <h2 class="text-left">Edit User</h2>
+    <form [formGroup]="editForm">      
       <div class="form-group">
         <label for="Id">Id:</label>
         <input type="text" formControlName="Id" placeholder="Id" name="Id" class="form-control" id="username" readonly="true">
@@ -21,6 +21,6 @@
         <input type="number" formControlName="product" placeholder="product" name="product" class="form-control" id="product">
       </div>
   
-      <button class="btn btn-success">Update</button>
+      <button class="btn btn-primary">Update</button>
     </form>
   </div>

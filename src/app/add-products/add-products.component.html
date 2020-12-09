@@ -1,1 +1,22 @@
-<p>add-products works!</p>
+<div class="container-sm">
+    <h1>Add Product</h1>
+    <form [formGroup]="addForm" novalidate>
+        <div class="mb-3">
+            <label>ID</label>
+            <input type="text" formControlName="id" class="form-control" maxlength="6" readonly="true">
+        </div>
+        <div class="mb-3">
+            <label>Address</label>
+            <textarea class="form-control" formControlName="ads" rows="3" maxlength="50"></textarea>
+        </div>
+        <div class="mb-3">
+            <label>Price</label>
+            <input type="text" formControlName="price" class="form-control">
+        </div>  
+        <div class="mb-3">
+            <label>Product</label>
+            <input type="text" formControlName="product" class="form-control">
+        </div>        
+            <button (click)="postProduct()" class="btn btn-primary" type="submit">Submit</button>        
+        </form>
+</div>
