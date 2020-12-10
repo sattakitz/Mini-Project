@@ -20,13 +20,13 @@ export class ListProductsComponent implements OnInit {
   getProducts() {
     this.svProduct.getProducts().subscribe(res => {
       this.products = res;
-      console.log("🚀 ~ this.svProduct.getProducts ~ res", res);
+      //console.log("🚀 ~ this.svProduct.getProducts ~ res", res);
     });
   }
   deleteProduct(id){
     this.svProduct.deleteProduct(id).subscribe(data=>{
       this.getProducts();
-      console.log("🚀 ~ this.svProduct.getProducts ~ res");      
+      //console.log("🚀 ~ this.svProduct.getProducts ~ res");      
     });
   }
   

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProductService } from 'Mini-Project/src/app/services/product.service';
+import { ProductService } from '../services/product.service';
 import {  Routes } from '@angular/router';
 import { ListProductsComponent } from '../list-products/list-products.component';
 import { inspect } from 'util';
@@ -14,18 +14,15 @@ export class AddProductsComponent implements OnInit {
 
   addForm :FormGroup;
   products = [];
-  router: Routes;
-  
-  
+  router: Routes;  
 
-  constructor(private fb:FormBuilder,public svProduct: ProductService
-    ) { 
+  constructor(private fb:FormBuilder,public svProduct: ProductService) { 
       
     }
     postProduct(){
       console.log(this.addForm.value);
       this.svProduct.postProduct(this.addForm.value).subscribe(data=>{
-        console.log('Add success');
+        console.log('Add success~!');
         
       });      
     }

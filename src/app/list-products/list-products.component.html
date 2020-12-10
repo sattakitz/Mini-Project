@@ -26,7 +26,7 @@
 			<td>{{ product.price }}</td>
 			<td>{{ product.product }}</td>
 			<td>
-				<a [routerLink]="['./edit-products']">
+				<a [routerLink]="['./edit-products/',product.id]">
 					<button routerLinkActive="router-link-active" class="btn btn-info btn-sm" 
 					style="width:100px">Edit Products</button>
 				</a>
